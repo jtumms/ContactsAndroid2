@@ -1,10 +1,12 @@
 package com.example.johntumminelli.contactsandroid;
 
+import java.io.Serializable;
+
 /**
  * Created by john.tumminelli on 9/29/16.
  */
 
-public class Contacts {
+public class Contacts implements Serializable{
     String name;
     String phone;
 
