@@ -1,5 +1,7 @@
 package com.example.johntumminelli.contactsandroid;
 
+import android.content.Intent;
+import android.provider.ContactsContract;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -54,8 +56,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        Intent detail = new Intent(this, Main2Activity.class);
+        Contacts contact = contacts.getItem(position);
+        assert contact != null;
+        detail.putExtra("name", contact.name);
+        detail.putExtra("phone", contact.phone);
+        startActivity(detail);
 
     }
+
 
     @Override
     public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
